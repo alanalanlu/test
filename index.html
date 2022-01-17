@@ -220,6 +220,7 @@ Brands, Who We Are, ​User Interface Design and Development, The power of brand
                           var record = local_data[i];
                           if (user_wallet == local_data[i].handle){
                             document.getElementById("user_url").innerHTML = local_data[i].url;
+                            var fin_url = local_data[i].url;
                           }
                       }
                     };
@@ -229,9 +230,7 @@ Brands, Who We Are, ​User Interface Design and Development, The power of brand
                   <input type="text" id="userwallet" name = "Wallet" placeholder="Solana Wallet" required/> </br>
                   <input id="submit" type="button" name="Submit" value="Submit" onclick="WalletAuth()"/>
                   
-                  <a href="user_url" target="_blank">
-                  <h4><br>Claim URL: <br><span href="user_url" id="user_url"></span></h4>
-                  </a>
+                  <h4><br>Claim URL: <br><br><span id="user_url"></span></h4>
 
                   </form>
               </ul>
