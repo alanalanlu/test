@@ -189,35 +189,55 @@ Brands, Who We Are, ​User Interface Design and Development, The power of brand
       </div>
     </section>
 
-    <script src="./data/NFT_Holders/url.js"> </script>
-    
-    <script>
-      function WalletAuth(){
-        console.log("Button was pressed");
-        user_wallet = document.getElementById("userwallet").value;
-        console.log(user_wallet);
-        var local_data = data;
-        for (var i = 0; i < local_data.length; i++) {
-            var record = local_data[i];
-            if (user_wallet == local_data[i].handle){
-              console.log(local_data[i]);
-              console.log("MATCH")
-              window.alert(local_data[i].url)
-              document.getElementById("user_url").innerHTML = local_data[i].url;
-            }
-        }
-      };
-      
-    </script>
-
-    <header>CLAIM </header> 
-      <form>
+    <!-- <header>CLAIM </header>  -->
+      <!-- <form>
         <input type="text" id="userwallet" name = "Wallet" placeholder="Solana Wallet" required/> </br>
         <input id="submit" type="button" name="Submit" value="Submit" onclick="WalletAuth()"/>
         
-        <h4><br>Claim URL: <span id="user_url"></span></h4>
+        <a href="user_url" target="_blank">
+        <h4><br>Claim URL: <br><span href="user_url" id="user_url"></span></h4>
+        </a>
 
-      </form>
- 
+      </form> -->
+      <section class="u-clearfix u-palette-2-light-1 u-section-2" id="carousel_aaa7">
+        <div class="u-clearfix u-sheet u-sheet-1">
+          <div class="u-palette-2-base u-shape u-shape-circle u-shape-1"></div>
+          <div class="u-align-left u-container-style u-expanded-width-xs u-group u-white u-group-1">
+            <div class="u-container-layout u-container-layout-1">
+              <h1 class="u-custom-font u-font-titillium-web u-text u-text-palette-2-light-1 u-text-1">CLAIM YOUR TOKENS</h1>
+              <ul class="u-custom-font u-font-titillium-web u-text u-text-palette-2-light-1 u-text-2">
+                <li>
+                  <span style="font-weight: 700; font-size: 1.5rem;">Add your solana wallet to see if you qualify for the AIRDROP of EWOOF</span>
+                </li>
+                <li>
+                  <script src="./data/NFT_Holders/url.js"> </script>
+    
+                  <script>
+                    function WalletAuth(){
+                      user_wallet = document.getElementById("userwallet").value;
+                      var local_data = data;
+                      for (var i = 0; i < local_data.length; i++) {
+                          var record = local_data[i];
+                          if (user_wallet == local_data[i].handle){
+                            document.getElementById("user_url").innerHTML = local_data[i].url;
+                          }
+                      }
+                    };
+                    
+                  </script>
+                  <form>
+                  <input type="text" id="userwallet" name = "Wallet" placeholder="Solana Wallet" required/> </br>
+                  <input id="submit" type="button" name="Submit" value="Submit" onclick="WalletAuth()"/>
+                  
+                  <a href="user_url" target="_blank">
+                  <h4><br>Claim URL: <br><span href="user_url" id="user_url"></span></h4>
+                  </a>
+
+                  </form>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
   </body>
 </html>
