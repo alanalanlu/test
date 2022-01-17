@@ -188,75 +188,36 @@ Brands, Who We Are, ​User Interface Design and Development, The power of brand
         </div>
       </div>
     </section>
-  
 
-    <!-- <script>
-      document.getElementById('submit').addEventListener("click", function() {
-        console.log("TEST");
-        // alert("You clicked me");
-      }​);​
-      // function WalletAuth(){
-      //     alert("Your button was pressed");
-      // };   
-    </script> -->
-
+    <script src="./data/NFT_Holders/url.js"> </script>
+    
     <script>
       function WalletAuth(){
         console.log("Button was pressed");
         user_wallet = document.getElementById("userwallet").value;
         console.log(user_wallet);
-        $.getJSON("data/NFT_Holders/url.json", function(data){
-          console.log(data.length);
-          for (var i = 0; i < data.length; i++) {
-            var record = data[i];
-            console.log(data[i]);
-            console.log(data[i].url);
-            // console.log(data.val);
-            // if (user_wallet== key.url){
-            //   console.log("MATCH")
-            // }
-              // $.each(data, function(key,val){
-                // console.log(data.val);
-                // if (user_wallet== key.url){
-                //   console.log("MATCH")
-                // }
-              // });
-            };
-          }) .fail(function (jqxhr, status, error) { 
-          console.log('error', status, error) }
-          )
-          ;
-      };   
+        var local_data = data;
+        for (var i = 0; i < local_data.length; i++) {
+            var record = local_data[i];
+            if (user_wallet == local_data[i].handle){
+              console.log(local_data[i]);
+              console.log("MATCH")
+              window.alert(local_data[i].url)
+              document.getElementById("user_url").innerHTML = local_data[i].url;
+            }
+        }
+      };
+      
     </script>
 
-    <header>CLAIM </header>
+    <header>CLAIM </header> 
       <form>
         <input type="text" id="userwallet" name = "Wallet" placeholder="Solana Wallet" required/> </br>
         <input id="submit" type="button" name="Submit" value="Submit" onclick="WalletAuth()"/>
-          <!-- {% if error %}
-            <p class="error"><strong>Error:</strong> {{error}}</p>
-          {% endif %} -->
+        
+        <h4><br>Claim URL: <span id="user_url"></span></h4>
+
       </form>
-
-      <!-- Testing -->
-      <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.1.js"></script>
-      <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
-      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-      <script type="text/javascript">
-          function process() {
-            alert("button was clicked");
-            $.getJSON("data/NFT_Holders/url.json"){
-              $each(function(key,val){
-                if ($("#text1").val()=="thefirstname" && key="first"){
-                          $("#firstname").val(key.first);
-                          $("#lastname").val(key.last);
-                          $("#description").val(key.desc);
-                }
-              });
-            });
-          }
-      </script> -->
  
-
   </body>
 </html>
