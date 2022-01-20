@@ -216,12 +216,16 @@ Brands, Who We Are, ​User Interface Design and Development, The power of brand
                     function WalletAuth(){
                       user_wallet = document.getElementById("userwallet").value;
                       var local_data = data;
+                      var fin_url = "";
                       for (var i = 0; i < local_data.length; i++) {
                           var record = local_data[i];
                           if (user_wallet == local_data[i].handle){
                             document.getElementById("user_url").innerHTML = local_data[i].url;
                             var fin_url = local_data[i].url;
                           }
+                      }
+                      if (fin_url == ""){ 
+                        alert("Your wallet is not found in this claim. Make sure your are inputting your correct Solana Wallet. Please contact the help channel in discord if you have any concerns.")
                       }
                     };
                     
